@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using Sklad3.Objects;
+using Sklad3.Reports;
+using Sklad3.Properties;
 
 namespace Sklad3.UI
 {
@@ -27,6 +29,9 @@ namespace Sklad3.UI
                 DbSklad.AddMonth(DateTime.Now);
             ricbMonth.Items.AddRange(DbSklad.Months);
             beiMonth.EditValue = DbSklad.Months.Last();
+
+            beiPodrazdName.EditValue = Settings.Default.Podrazd;
+            beiUserName.EditValue = Settings.Default.UserName;
         }
 
         public void UpdateTables()
@@ -230,47 +235,17 @@ namespace Sklad3.UI
 
         private void bbiRepOther_ItemClick(object sender, ItemClickEventArgs e)
         {
-            /*formReport repForm = new formReport();
-            repForm.Text = "Материальный отчет за " + currMonthName.ToLower();
-            RepMoves report = new RepMoves();
-            report.bsSklMoves.DataSource = DbSklad.Sklad(currMonthId, true).FindAll(m => !m.Nsch.Equals("210104") && !m.Nsch.Equals("210106"));
-            report.Parameters["parOrg"].Value = "Кемеровский институт (филиал) РГТЭУ";
-            report.Parameters["parUser"].Value = "Марчукова Е.В.";
-            report.Parameters["parAccept"].Value = "Фролова О.В.";
-            report.Parameters["parMonth"].Value = currMonthName.ToLower();
-            repForm.pcReport.PrintingSystem = report.PrintingSystem;
-            report.CreateDocument(true);
-            repForm.Show();*/
+            new MatReport(DbSklad.Sklad.FindAll(s => !s.Tovar.Nsch.Equals("210104") && !s.Tovar.Nsch.Equals("210106"))).Build();
         }
 
         private void bbiRep210104_ItemClick(object sender, ItemClickEventArgs e)
         {
-            /*formReport repForm = new formReport();
-            repForm.Text = "Материальный отчет за " + currMonthName.ToLower();
-            RepMovesInvn report = new RepMovesInvn();
-            report.bsSklMoves.DataSource = DbSklad.Sklad(currMonthId, true).FindAll(m => m.Nsch.Equals("210104"));
-            report.Parameters["parOrg"].Value = "Кемеровский институт (филиал) РГТЭУ";
-            report.Parameters["parUser"].Value = "Марчукова Е.В.";
-            report.Parameters["parAccept"].Value = "Фролова О.В.";
-            report.Parameters["parMonth"].Value = currMonthName.ToLower();
-            repForm.pcReport.PrintingSystem = report.PrintingSystem;
-            report.CreateDocument(true);
-            repForm.Show();*/
+            new MatReport(DbSklad.Sklad.FindAll(s => s.Tovar.Nsch.Equals("210104"))).Build();
         }
 
         private void bbiRep210106_ItemClick(object sender, ItemClickEventArgs e)
         {
-            /*formReport repForm = new formReport();
-            repForm.Text = "Материальный отчет за " + currMonthName.ToLower();
-            RepMovesInvn report = new RepMovesInvn();
-            report.bsSklMoves.DataSource = DbSklad.Sklad(currMonthId, true).FindAll(m => m.Nsch.Equals("210106"));
-            report.Parameters["parOrg"].Value = "Кемеровский институт (филиал) РГТЭУ";
-            report.Parameters["parUser"].Value = "Марчукова Е.В.";
-            report.Parameters["parAccept"].Value = "Фролова О.В.";
-            report.Parameters["parMonth"].Value = currMonthName.ToLower();
-            repForm.pcReport.PrintingSystem = report.PrintingSystem;
-            report.CreateDocument(true);
-            repForm.Show();*/
+            new MatReport(DbSklad.Sklad.FindAll(s => s.Tovar.Nsch.Equals("210106"))).Build();
         }
 
         private void bbiImport_ItemClick(object sender, ItemClickEventArgs e)
@@ -373,5 +348,23 @@ namespace Sklad3.UI
         }
 
         #endregion
+
+        private void beiPodrazdName_EditValueChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default.Podrazd != beiPodrazdName.EditValue.ToString())
+            {
+                Settings.Default.Podrazd = beiPodrazdName.EditValue.ToString();
+                Settings.Default.Save();
+            }
+        }
+
+        private void beiUserName_EditValueChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default.UserName != beiUserName.EditValue.ToString())
+            {
+                Settings.Default.UserName = beiUserName.EditValue.ToString();
+                Settings.Default.Save();
+            }
+        }
     }
 }

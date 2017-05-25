@@ -95,6 +95,16 @@ namespace Sklad3.Objects
             set { _totalCount = value; }
         }
 
+        public string NameWithInvn
+        {
+            get
+            {
+                if (!String.IsNullOrEmpty(_invn))
+                    return Name + " " + _invn;
+                return Name;
+            }
+        }
+
         protected override bool CheckDublicate()
         {
             var exists = DbSklad.Tovars.Find(t => t != this && t._edIsm == _edIsm && t.Name.Equals(Name) && t.Nsch.Equals(_nsch) && t._invn.Equals(_invn) && Math.Abs(t._price - _price) < 0.01);

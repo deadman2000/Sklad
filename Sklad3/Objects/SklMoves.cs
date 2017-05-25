@@ -52,6 +52,6 @@ namespace Sklad3.Objects
             }
         }
 
-        public double? KmSum => KmCount * Tovar.Price;
+        public double KmSum => KmCount * Tovar.Price;
     }
 }

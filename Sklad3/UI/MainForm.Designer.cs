@@ -71,20 +71,27 @@
             this.tpSklad = new DevExpress.XtraTab.XtraTabPage();
             this.gcSklad = new DevExpress.XtraGrid.GridControl();
             this.gvSklad = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSklTovId = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklNsch = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklInvn = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklEdism = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklPrice = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSklNmcount = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklNmsum = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSklPrcount = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklPrsum = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSklRscount = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklRssum = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSklKmcount = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSklKmsum = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colSklNmNote = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.tpPrihod = new DevExpress.XtraTab.XtraTabPage();
             this.gcPrihod = new DevExpress.XtraGrid.GridControl();
             this.gvPrihod = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -123,13 +130,11 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.pmSklRashod = new DevExpress.XtraBars.PopupMenu(this.components);
             this.pmSklPrihod = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.colSklNmNote = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.rpgRepSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.beiPodrazdName = new DevExpress.XtraBars.BarEditItem();
+            this.ritePodrazdName = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.beiUserName = new DevExpress.XtraBars.BarEditItem();
+            this.riteUserName = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icSmallButtons)).BeginInit();
@@ -154,6 +159,8 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pmSklRashod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pmSklPrihod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ritePodrazdName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.riteUserName)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -185,11 +192,12 @@
             this.bbiNewMonth,
             this.bbiChangeTovar,
             this.bbiRemoveMove,
-            this.bbiChangePrDoc});
+            this.bbiChangePrDoc,
+            this.beiPodrazdName,
+            this.beiUserName});
             this.ribbon.LargeImages = this.icLargeButtons;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbon.MaxItemId = 3;
+            this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.bchiFilter);
             this.ribbon.PageHeaderItemLinks.Add(this.beiLocate);
@@ -201,10 +209,12 @@
             this.rpSettings});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ricbMonth,
-            this.ribeLocate});
+            this.ribeLocate,
+            this.ritePodrazdName,
+            this.riteUserName});
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1167, 183);
+            this.ribbon.Size = new System.Drawing.Size(1000, 144);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
@@ -475,7 +485,8 @@
             // rpSettings
             // 
             this.rpSettings.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgSkin});
+            this.rpgSkin,
+            this.rpgRepSettings});
             this.rpSettings.Name = "rpSettings";
             this.rpSettings.Text = "Настройки";
             // 
@@ -488,21 +499,20 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 903);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 735);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1167, 41);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1000, 32);
             // 
             // tcMain
             // 
             this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcMain.Images = this.icFolders;
-            this.tcMain.Location = new System.Drawing.Point(4, 4);
+            this.tcMain.Location = new System.Drawing.Point(3, 3);
             this.tcMain.Margin = new System.Windows.Forms.Padding(0);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedTabPage = this.tpSklad;
-            this.tcMain.Size = new System.Drawing.Size(1163, 716);
+            this.tcMain.Size = new System.Drawing.Size(997, 588);
             this.tcMain.TabIndex = 5;
             this.tcMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tpPrihod,
@@ -522,19 +532,18 @@
             this.tpSklad.ImageIndex = 0;
             this.tpSklad.Margin = new System.Windows.Forms.Padding(0);
             this.tpSklad.Name = "tpSklad";
-            this.tpSklad.Size = new System.Drawing.Size(1156, 682);
+            this.tpSklad.Size = new System.Drawing.Size(991, 557);
             this.tpSklad.Text = "Склад";
             // 
             // gcSklad
             // 
             this.gcSklad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcSklad.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcSklad.Location = new System.Drawing.Point(0, 0);
             this.gcSklad.MainView = this.gvSklad;
             this.gcSklad.Margin = new System.Windows.Forms.Padding(0);
             this.gcSklad.MenuManager = this.ribbon;
             this.gcSklad.Name = "gcSklad";
-            this.gcSklad.Size = new System.Drawing.Size(1156, 682);
+            this.gcSklad.Size = new System.Drawing.Size(991, 557);
             this.gcSklad.TabIndex = 0;
             this.gcSklad.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSklad});
@@ -584,6 +593,19 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSklName, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gvSklad.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gvSklad_PopupMenuShowing);
             this.gvSklad.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvSklad_CellValueChanged);
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.Columns.Add(this.colSklTovId);
+            this.gridBand1.Columns.Add(this.colSklNsch);
+            this.gridBand1.Columns.Add(this.colSklInvn);
+            this.gridBand1.Columns.Add(this.colSklName);
+            this.gridBand1.Columns.Add(this.colSklEdism);
+            this.gridBand1.Columns.Add(this.colSklPrice);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.OptionsBand.ShowCaption = false;
+            this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 347;
             // 
             // colSklTovId
             // 
@@ -645,6 +667,17 @@
             this.colSklPrice.Visible = true;
             this.colSklPrice.Width = 80;
             // 
+            // gridBand2
+            // 
+            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand2.Caption = "На начало месяца";
+            this.gridBand2.Columns.Add(this.colSklNmcount);
+            this.gridBand2.Columns.Add(this.colSklNmsum);
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 1;
+            this.gridBand2.Width = 104;
+            // 
             // colSklNmcount
             // 
             this.colSklNmcount.AppearanceHeader.Options.UseTextOptions = true;
@@ -671,6 +704,17 @@
             this.colSklNmsum.OptionsColumn.AllowShowHide = false;
             this.colSklNmsum.Visible = true;
             this.colSklNmsum.Width = 50;
+            // 
+            // gridBand3
+            // 
+            this.gridBand3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand3.Caption = "Приход";
+            this.gridBand3.Columns.Add(this.colSklPrcount);
+            this.gridBand3.Columns.Add(this.colSklPrsum);
+            this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 2;
+            this.gridBand3.Width = 104;
             // 
             // colSklPrcount
             // 
@@ -700,6 +744,17 @@
             this.colSklPrsum.Visible = true;
             this.colSklPrsum.Width = 50;
             // 
+            // gridBand4
+            // 
+            this.gridBand4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand4.Caption = "Расход";
+            this.gridBand4.Columns.Add(this.colSklRscount);
+            this.gridBand4.Columns.Add(this.colSklRssum);
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 3;
+            this.gridBand4.Width = 104;
+            // 
             // colSklRscount
             // 
             this.colSklRscount.AppearanceHeader.Options.UseTextOptions = true;
@@ -727,6 +782,17 @@
             this.colSklRssum.OptionsColumn.AllowShowHide = false;
             this.colSklRssum.Visible = true;
             this.colSklRssum.Width = 50;
+            // 
+            // gridBand5
+            // 
+            this.gridBand5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand5.Caption = "Остаток";
+            this.gridBand5.Columns.Add(this.colSklKmcount);
+            this.gridBand5.Columns.Add(this.colSklKmsum);
+            this.gridBand5.Name = "gridBand5";
+            this.gridBand5.VisibleIndex = 4;
+            this.gridBand5.Width = 104;
             // 
             // colSklKmcount
             // 
@@ -756,25 +822,40 @@
             this.colSklKmsum.Visible = true;
             this.colSklKmsum.Width = 50;
             // 
+            // gridBand6
+            // 
+            this.gridBand6.Columns.Add(this.colSklNmNote);
+            this.gridBand6.Name = "gridBand6";
+            this.gridBand6.OptionsBand.ShowCaption = false;
+            this.gridBand6.VisibleIndex = 5;
+            this.gridBand6.Width = 313;
+            // 
+            // colSklNmNote
+            // 
+            this.colSklNmNote.Caption = "Примечание";
+            this.colSklNmNote.FieldName = "Tovar.Note";
+            this.colSklNmNote.Name = "colSklNmNote";
+            this.colSklNmNote.Visible = true;
+            this.colSklNmNote.Width = 313;
+            // 
             // tpPrihod
             // 
             this.tpPrihod.Controls.Add(this.gcPrihod);
             this.tpPrihod.ImageIndex = 1;
             this.tpPrihod.Margin = new System.Windows.Forms.Padding(0);
             this.tpPrihod.Name = "tpPrihod";
-            this.tpPrihod.Size = new System.Drawing.Size(1156, 682);
+            this.tpPrihod.Size = new System.Drawing.Size(991, 551);
             this.tpPrihod.Text = "Приход";
             // 
             // gcPrihod
             // 
             this.gcPrihod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcPrihod.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcPrihod.Location = new System.Drawing.Point(0, 0);
             this.gcPrihod.MainView = this.gvPrihod;
             this.gcPrihod.Margin = new System.Windows.Forms.Padding(0);
             this.gcPrihod.MenuManager = this.ribbon;
             this.gcPrihod.Name = "gcPrihod";
-            this.gcPrihod.Size = new System.Drawing.Size(1156, 682);
+            this.gcPrihod.Size = new System.Drawing.Size(991, 551);
             this.gcPrihod.TabIndex = 0;
             this.gcPrihod.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPrihod});
@@ -977,21 +1058,19 @@
             // 
             this.tpRashod.Controls.Add(this.gcRashod);
             this.tpRashod.ImageIndex = 2;
-            this.tpRashod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpRashod.Name = "tpRashod";
-            this.tpRashod.Size = new System.Drawing.Size(1156, 682);
+            this.tpRashod.Size = new System.Drawing.Size(991, 551);
             this.tpRashod.Text = "Расход";
             // 
             // gcRashod
             // 
             this.gcRashod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcRashod.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcRashod.Location = new System.Drawing.Point(0, 0);
             this.gcRashod.MainView = this.gvRashod;
             this.gcRashod.Margin = new System.Windows.Forms.Padding(0);
             this.gcRashod.MenuManager = this.ribbon;
             this.gcRashod.Name = "gcRashod";
-            this.gcRashod.Size = new System.Drawing.Size(1156, 682);
+            this.gcRashod.Size = new System.Drawing.Size(991, 551);
             this.gcRashod.TabIndex = 1;
             this.gcRashod.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRashod});
@@ -1199,10 +1278,11 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.tcMain);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 183);
+            this.panelControl1.Location = new System.Drawing.Point(0, 144);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
-            this.panelControl1.Size = new System.Drawing.Size(1167, 720);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            this.panelControl1.Size = new System.Drawing.Size(1000, 591);
             this.panelControl1.TabIndex = 4;
             // 
             // pmSklRashod
@@ -1221,89 +1301,50 @@
             this.pmSklPrihod.Name = "pmSklPrihod";
             this.pmSklPrihod.Ribbon = this.ribbon;
             // 
-            // colSklNmNote
+            // rpgRepSettings
             // 
-            this.colSklNmNote.Caption = "Примечание";
-            this.colSklNmNote.FieldName = "Tovar.Note";
-            this.colSklNmNote.Name = "colSklNmNote";
-            this.colSklNmNote.Visible = true;
-            this.colSklNmNote.Width = 313;
+            this.rpgRepSettings.ItemLinks.Add(this.beiPodrazdName);
+            this.rpgRepSettings.ItemLinks.Add(this.beiUserName);
+            this.rpgRepSettings.Name = "rpgRepSettings";
+            this.rpgRepSettings.Text = "Отчеты";
             // 
-            // gridBand1
+            // beiPodrazdName
             // 
-            this.gridBand1.Columns.Add(this.colSklTovId);
-            this.gridBand1.Columns.Add(this.colSklNsch);
-            this.gridBand1.Columns.Add(this.colSklInvn);
-            this.gridBand1.Columns.Add(this.colSklName);
-            this.gridBand1.Columns.Add(this.colSklEdism);
-            this.gridBand1.Columns.Add(this.colSklPrice);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.OptionsBand.ShowCaption = false;
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 347;
+            this.beiPodrazdName.Caption = "Подразделение";
+            this.beiPodrazdName.Edit = this.ritePodrazdName;
+            this.beiPodrazdName.EditWidth = 150;
+            this.beiPodrazdName.Id = 4;
+            this.beiPodrazdName.Name = "beiPodrazdName";
+            this.beiPodrazdName.EditValueChanged += new System.EventHandler(this.beiPodrazdName_EditValueChanged);
             // 
-            // gridBand2
+            // ritePodrazdName
             // 
-            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand2.Caption = "На начало месяца";
-            this.gridBand2.Columns.Add(this.colSklNmcount);
-            this.gridBand2.Columns.Add(this.colSklNmsum);
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 1;
-            this.gridBand2.Width = 104;
+            this.ritePodrazdName.AutoHeight = false;
+            this.ritePodrazdName.Name = "ritePodrazdName";
             // 
-            // gridBand3
+            // beiUserName
             // 
-            this.gridBand3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand3.Caption = "Приход";
-            this.gridBand3.Columns.Add(this.colSklPrcount);
-            this.gridBand3.Columns.Add(this.colSklPrsum);
-            this.gridBand3.Name = "gridBand3";
-            this.gridBand3.VisibleIndex = 2;
-            this.gridBand3.Width = 104;
+            this.beiUserName.Caption = "Пользователь";
+            this.beiUserName.Edit = this.riteUserName;
+            this.beiUserName.EditWidth = 150;
+            this.beiUserName.Id = 5;
+            this.beiUserName.Name = "beiUserName";
+            this.beiUserName.EditValueChanged += new System.EventHandler(this.beiUserName_EditValueChanged);
             // 
-            // gridBand4
+            // riteUserName
             // 
-            this.gridBand4.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand4.Caption = "Расход";
-            this.gridBand4.Columns.Add(this.colSklRscount);
-            this.gridBand4.Columns.Add(this.colSklRssum);
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.VisibleIndex = 3;
-            this.gridBand4.Width = 104;
-            // 
-            // gridBand5
-            // 
-            this.gridBand5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand5.Caption = "Остаток";
-            this.gridBand5.Columns.Add(this.colSklKmcount);
-            this.gridBand5.Columns.Add(this.colSklKmsum);
-            this.gridBand5.Name = "gridBand5";
-            this.gridBand5.VisibleIndex = 4;
-            this.gridBand5.Width = 104;
-            // 
-            // gridBand6
-            // 
-            this.gridBand6.Columns.Add(this.colSklNmNote);
-            this.gridBand6.Name = "gridBand6";
-            this.gridBand6.OptionsBand.ShowCaption = false;
-            this.gridBand6.VisibleIndex = 5;
-            this.gridBand6.Width = 313;
+            this.riteUserName.AutoHeight = false;
+            this.riteUserName.Name = "riteUserName";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 944);
+            this.ClientSize = new System.Drawing.Size(1000, 767);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1333,6 +1374,8 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pmSklRashod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pmSklPrihod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ritePodrazdName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.riteUserName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1439,5 +1482,10 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSklNmNote;
+        private DevExpress.XtraBars.BarEditItem beiPodrazdName;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit ritePodrazdName;
+        private DevExpress.XtraBars.BarEditItem beiUserName;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit riteUserName;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRepSettings;
     }
 }
