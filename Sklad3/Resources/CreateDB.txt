@@ -1,0 +1,68 @@
+CREATE TABLE [EdIsm](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[name] char(5) NOT NULL
+);
+CREATE TABLE [Predpr](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[name] char(50) NOT NULL
+);
+CREATE TABLE [Podrazd](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[name] char(100) NOT NULL
+);
+CREATE TABLE [Dolj](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[name] char(30) NOT NULL
+);
+CREATE TABLE [Months](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[date] datetime NOT NULL
+);
+CREATE TABLE [Tovar](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[name] char(150) NOT NULL,
+	[id_edism] integer NOT NULL,
+	[price] real(10, 4) NOT NULL,
+	[invn] char(15),
+	[nsch] char(10),
+	[isVisible] int NOT NULL,
+	[note] text NOT NULL DEFAULT('')
+);
+CREATE TABLE [SklRs](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[id_tov] integer NOT NULL,
+	[count] real(14, 4) NOT NULL,
+	[id_doc] integer,
+	[date_rs] datetime NOT NULL,
+	[id_month] integer NOT NULL
+);
+CREATE TABLE [SklPr](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[id_tov] integer NOT NULL,
+	[count] real(14, 4) NOT NULL,
+	[id_sf] integer,
+	[date_pr] datetime NOT NULL,
+	[typedoc] char(3) NOT NULL,
+	[id_month] integer NOT NULL
+);
+CREATE TABLE [SklNm](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[id_tov] integer NOT NULL,
+	[count] real(14, 4) NOT NULL,
+	[id_month] integer NOT NULL
+);
+CREATE TABLE [SchFact](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[num] char(15) NOT NULL,
+	[id_predpr] integer NOT NULL,
+	[datesf] datetime NOT NULL,
+	[id_month] integer NOT NULL
+);
+CREATE TABLE [RasDoc](
+	[id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	[id_dl] integer NOT NULL,
+	[id_podr] integer NOT NULL,
+	[ntreb] integer,
+	[date] datetime NOT NULL,
+	[id_month] integer NOT NULL
+);

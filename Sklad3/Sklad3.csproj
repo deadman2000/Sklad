@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A2BBA33-A953-4931-9F20-F965AB80AD69}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sklad3</RootNamespace>
+    <AssemblyName>Sklad3</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.Firebird">
+      <HintPath>lib\FirebirdSql.Data.Firebird.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.0\lib\net40\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.105.0\lib\net40\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Objects\EdIsm.cs" />
+    <Compile Include="Objects\IdObject.cs" />
+    <Compile Include="Objects\Month.cs" />
+    <Compile Include="Objects\NamedItem.cs" />
+    <Compile Include="Objects\Podrazd.cs" />
+    <Compile Include="Objects\Predpr.cs" />
+    <Compile Include="Objects\Ras.cs" />
+    <Compile Include="Objects\SFact.cs" />
+    <Compile Include="Objects\SklBase.cs" />
+    <Compile Include="Objects\SklNm.cs" />
+    <Compile Include="Objects\SklPr.cs" />
+    <Compile Include="Objects\SklRs.cs" />
+    <Compile Include="SQLiteSafe.cs" />
+    <Compile Include="UI\FormAddMBeg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormAddMBeg.Designer.cs">
+      <DependentUpon>FormAddMBeg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormAddPrOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormAddPrOne.Designer.cs">
+      <DependentUpon>FormAddPrOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormAddPrDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormAddPrDoc.Designer.cs">
+      <DependentUpon>FormAddPrDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Importer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\SklMoves.cs" />
+    <Compile Include="UI\FormHolder.cs" />
+    <Compile Include="UI\FormSelectRasDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelectRasDoc.Designer.cs">
+      <DependentUpon>FormSelectRasDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSelectSFact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelectSFact.Designer.cs">
+      <DependentUpon>FormSelectSFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SelectTovar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SelectTovar.Designer.cs">
+      <DependentUpon>SelectTovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\People.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbSklad.cs" />
+    <Compile Include="Objects\Tovar.cs" />
+    <Compile Include="UI\FormAddRsOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormAddRsOne.Designer.cs">
+      <DependentUpon>FormAddRsOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SelectExistTovar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SelectExistTovar.Designer.cs">
+      <DependentUpon>SelectExistTovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormAddRsDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormAddRsDoc.Designer.cs">
+      <DependentUpon>FormAddRsDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSelectTovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelectTovar.Designer.cs">
+      <DependentUpon>FormSelectTovar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\FormAddMBeg.resx">
+      <DependentUpon>FormAddMBeg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormAddPrOne.resx">
+      <DependentUpon>FormAddPrOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormAddPrDoc.resx">
+      <DependentUpon>FormAddPrDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormAddRsDoc.resx">
+      <DependentUpon>FormAddRsDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormSelectRasDoc.resx">
+      <DependentUpon>FormSelectRasDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormSelectSFact.resx">
+      <DependentUpon>FormSelectSFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormSelectTovar.resx">
+      <DependentUpon>FormSelectTovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormAddRsOne.resx">
+      <DependentUpon>FormAddRsOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SelectExistTovar.resx">
+      <DependentUpon>SelectExistTovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="UI\SelectTovar.resx">
+      <DependentUpon>SelectTovar.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateDB.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.0\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net40\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.0\build\net40\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
