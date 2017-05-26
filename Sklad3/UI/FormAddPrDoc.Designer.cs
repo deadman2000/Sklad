@@ -74,11 +74,12 @@
             // 
             // selTov
             // 
-            this.selTov.Location = new System.Drawing.Point(9, 158);
-            this.selTov.Margin = new System.Windows.Forms.Padding(5);
+            this.selTov.Location = new System.Drawing.Point(8, 128);
+            this.selTov.Margin = new System.Windows.Forms.Padding(4);
             this.selTov.Name = "selTov";
-            this.selTov.Size = new System.Drawing.Size(395, 213);
+            this.selTov.Size = new System.Drawing.Size(339, 173);
             this.selTov.TabIndex = 0;
+            this.selTov.UseCount = true;
             // 
             // panelControl1
             // 
@@ -101,162 +102,146 @@
             this.panelControl1.Controls.Add(this.selTov);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(406, 418);
+            this.panelControl1.Size = new System.Drawing.Size(348, 337);
             this.panelControl1.TabIndex = 1;
             // 
             // btCancel
             // 
-            this.btCancel.Location = new System.Drawing.Point(299, 374);
-            this.btCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btCancel.Location = new System.Drawing.Point(256, 304);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(87, 28);
+            this.btCancel.Size = new System.Drawing.Size(75, 23);
             this.btCancel.TabIndex = 21;
             this.btCancel.Text = "Отмена";
-            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // sbAddPrDoc
             // 
-            this.sbAddPrDoc.Location = new System.Drawing.Point(205, 374);
-            this.sbAddPrDoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sbAddPrDoc.Location = new System.Drawing.Point(176, 304);
             this.sbAddPrDoc.Name = "sbAddPrDoc";
-            this.sbAddPrDoc.Size = new System.Drawing.Size(87, 28);
+            this.sbAddPrDoc.Size = new System.Drawing.Size(75, 23);
             this.sbAddPrDoc.TabIndex = 20;
             this.sbAddPrDoc.Text = "Готово";
             this.sbAddPrDoc.Click += new System.EventHandler(this.sbAddPrDoc_Click);
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(19, 108);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl6.Location = new System.Drawing.Point(16, 88);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(66, 16);
+            this.labelControl6.Size = new System.Drawing.Size(57, 13);
             this.labelControl6.TabIndex = 19;
             this.labelControl6.Text = "Поставщик";
             // 
             // cbPredp
             // 
-            this.cbPredp.Location = new System.Drawing.Point(19, 128);
-            this.cbPredp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbPredp.Location = new System.Drawing.Point(16, 104);
             this.cbPredp.Name = "cbPredp";
             this.cbPredp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbPredp.Properties.ImmediatePopup = true;
             this.cbPredp.Properties.MaxLength = 50;
-            this.cbPredp.Size = new System.Drawing.Size(373, 22);
+            this.cbPredp.Size = new System.Drawing.Size(320, 20);
             this.cbPredp.TabIndex = 18;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(271, 59);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl5.Location = new System.Drawing.Point(232, 48);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(94, 16);
+            this.labelControl5.Size = new System.Drawing.Size(84, 13);
             this.labelControl5.TabIndex = 17;
             this.labelControl5.Text = "Дата документа";
             // 
             // deDateDoc
             // 
             this.deDateDoc.EditValue = null;
-            this.deDateDoc.Location = new System.Drawing.Point(271, 79);
-            this.deDateDoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deDateDoc.Location = new System.Drawing.Point(232, 64);
             this.deDateDoc.Name = "deDateDoc";
             this.deDateDoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deDateDoc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.deDateDoc.Size = new System.Drawing.Size(121, 22);
+            this.deDateDoc.Size = new System.Drawing.Size(104, 20);
             this.deDateDoc.TabIndex = 16;
             // 
             // teNumDoc
             // 
-            this.teNumDoc.Location = new System.Drawing.Point(19, 79);
-            this.teNumDoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.teNumDoc.Location = new System.Drawing.Point(16, 64);
             this.teNumDoc.Name = "teNumDoc";
             this.teNumDoc.Properties.MaxLength = 15;
-            this.teNumDoc.Size = new System.Drawing.Size(243, 22);
+            this.teNumDoc.Size = new System.Drawing.Size(208, 20);
             this.teNumDoc.TabIndex = 15;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(19, 59);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl4.Location = new System.Drawing.Point(16, 48);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(102, 16);
+            this.labelControl4.Size = new System.Drawing.Size(89, 13);
             this.labelControl4.TabIndex = 14;
             this.labelControl4.Text = "Номер документа";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(308, 10);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl3.Location = new System.Drawing.Point(264, 8);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(22, 16);
+            this.labelControl3.Size = new System.Drawing.Size(18, 13);
             this.labelControl3.TabIndex = 13;
             this.labelControl3.Text = "Тип";
             // 
             // cbTypeDoc
             // 
-            this.cbTypeDoc.Location = new System.Drawing.Point(308, 30);
-            this.cbTypeDoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbTypeDoc.Location = new System.Drawing.Point(264, 24);
             this.cbTypeDoc.Name = "cbTypeDoc";
             this.cbTypeDoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTypeDoc.Properties.MaxLength = 3;
-            this.cbTypeDoc.Size = new System.Drawing.Size(84, 22);
+            this.cbTypeDoc.Size = new System.Drawing.Size(72, 20);
             this.cbTypeDoc.TabIndex = 12;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(177, 10);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl2.Location = new System.Drawing.Point(152, 8);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(81, 16);
+            this.labelControl2.Size = new System.Drawing.Size(72, 13);
             this.labelControl2.TabIndex = 11;
             this.labelControl2.Text = "Дата прихода";
             // 
             // deDate
             // 
             this.deDate.EditValue = null;
-            this.deDate.Location = new System.Drawing.Point(177, 30);
-            this.deDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deDate.Location = new System.Drawing.Point(152, 24);
             this.deDate.Name = "deDate";
             this.deDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.deDate.Size = new System.Drawing.Size(117, 22);
+            this.deDate.Size = new System.Drawing.Size(100, 20);
             this.deDate.TabIndex = 10;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 10);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(16, 8);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(37, 16);
+            this.labelControl1.Size = new System.Drawing.Size(31, 13);
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "Месяц";
             // 
             // cbMonth
             // 
-            this.cbMonth.Location = new System.Drawing.Point(19, 30);
-            this.cbMonth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbMonth.Location = new System.Drawing.Point(16, 24);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Properties.AllowFocused = false;
             this.cbMonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMonth.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbMonth.Size = new System.Drawing.Size(149, 22);
+            this.cbMonth.Size = new System.Drawing.Size(128, 20);
             this.cbMonth.TabIndex = 8;
             this.cbMonth.TabStop = false;
             // 
             // cbAddTov
             // 
-            this.cbAddTov.Location = new System.Drawing.Point(280, 335);
-            this.cbAddTov.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbAddTov.Location = new System.Drawing.Point(240, 272);
             this.cbAddTov.Name = "cbAddTov";
-            this.cbAddTov.Size = new System.Drawing.Size(106, 28);
+            this.cbAddTov.Size = new System.Drawing.Size(91, 23);
             this.cbAddTov.TabIndex = 4;
             this.cbAddTov.Text = "Добавить >>";
             this.cbAddTov.Click += new System.EventHandler(this.cbAddTov_Click);
@@ -264,12 +249,10 @@
             // gcTovars
             // 
             this.gcTovars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcTovars.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gcTovars.Location = new System.Drawing.Point(406, 0);
+            this.gcTovars.Location = new System.Drawing.Point(348, 0);
             this.gcTovars.MainView = this.gvTovars;
-            this.gcTovars.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcTovars.Name = "gcTovars";
-            this.gcTovars.Size = new System.Drawing.Size(660, 418);
+            this.gcTovars.Size = new System.Drawing.Size(559, 337);
             this.gcTovars.TabIndex = 2;
             this.gcTovars.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTovars});
@@ -374,12 +357,12 @@
             // 
             // FormAddPrDoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 418);
+            this.CancelButton = this.btCancel;
+            this.ClientSize = new System.Drawing.Size(907, 337);
             this.Controls.Add(this.gcTovars);
             this.Controls.Add(this.panelControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAddPrDoc";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

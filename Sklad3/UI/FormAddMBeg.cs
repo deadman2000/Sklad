@@ -13,12 +13,7 @@ namespace Sklad3.UI
             cbMonth.Properties.Items.AddRange(DbSklad.Months);
             cbMonth.EditValue = DbSklad.CurrentMonth;
         }
-
-        private void btCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        
         private void btAdd_Click(object sender, EventArgs e)
         {
             if (selTov.SelectedTovar != null)

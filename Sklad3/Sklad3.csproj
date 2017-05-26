@@ -94,6 +94,7 @@
     <Compile Include="Objects\Podrazd.cs" />
     <Compile Include="Objects\Predpr.cs" />
     <Compile Include="Objects\Ras.cs" />
+    <Compile Include="Objects\RasDocPattern.cs" />
     <Compile Include="Objects\SFact.cs" />
     <Compile Include="Objects\SklBase.cs" />
     <Compile Include="Objects\SklNm.cs" />
@@ -105,6 +106,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Reports\MatReport.cs" />
+    <Compile Include="Reports\RasReport.cs" />
     <Compile Include="Reports\Report.cs" />
     <Compile Include="SQLiteSafe.cs" />
     <Compile Include="UI\FormAddMBeg.cs">
@@ -230,6 +232,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="templates\mat_rep.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="templates\rs_0504104.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="templates\rs_0504143.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

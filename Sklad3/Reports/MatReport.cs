@@ -64,6 +64,8 @@ namespace Sklad3.Reports
                         sl.SetCellValue(row, 12, m.KmCount);
                         sl.SetCellValue(row, 13, m.KmSum.ToString("N", nfi_money));
                     }
+                    sl.AutoFitRow(row);
+                    Console.WriteLine("Autofit row");
 
                     totalNm += m.NmSum.GetValueOrDefault(0);
                     totalRs += m.RsSum;

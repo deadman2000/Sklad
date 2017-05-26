@@ -18,11 +18,6 @@ namespace Sklad3.UI
             luePrDoc.Properties.DataSource = DbSklad.SchFacts;
         }
 
-        private void btCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btAddPr_Click(object sender, EventArgs e)
         {
             var tovar = selTov.SelectedTovar;

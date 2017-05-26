@@ -15,6 +15,7 @@ namespace Sklad3.Objects
         private People _dolj;
         private int? _number;
         private DateTime _date;
+        private RasDocPattern _type;
 
         public Ras(DataRow row) : base(row)
         {
@@ -23,6 +24,8 @@ namespace Sklad3.Objects
             if (!(row["ntreb"] is DBNull))
                 _number = (int)(long)row["ntreb"];
             _date = (DateTime)row["date"];
+            if (!(row["type"] is DBNull))
+                _type = RasDocPattern.ById((int)(long)row["type"]);
         }
 
         protected override string Table => "RasDoc";
@@ -35,6 +38,7 @@ namespace Sklad3.Objects
             get { return _dolj; }
             set
             {
+                if (_dolj == value) return;
                 _dolj = value;
                 UpdateField("id_dl", _dolj.Id);
             }
@@ -48,7 +52,8 @@ namespace Sklad3.Objects
             get { return _podr; }
             set
             {
-                _podr = value; 
+                if (_podr == value) return;
+                _podr = value;
                 UpdateField("id_podr", _podr.Id);
             }
         }
@@ -58,7 +63,8 @@ namespace Sklad3.Objects
             get { return _number; }
             set
             {
-                _number = value; 
+                if (_number == value) return;
+                _number = value;
                 UpdateField("ntreb", _number);
             }
         }
@@ -68,8 +74,20 @@ namespace Sklad3.Objects
             get { return _date; }
             set
             {
+                if (_date == value) return;
                 _date = value;
                 UpdateField("date", _date);
+            }
+        }
+
+        public RasDocPattern Type
+        {
+            get { return _type; }
+            set
+            {
+                if (_type == value) return;
+                _type = value;
+                UpdateField("type", _date);
             }
         }
 

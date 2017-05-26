@@ -136,7 +136,7 @@ namespace Sklad3
                     int? ntreb = row["NTREB"] is DBNull ? (int?)null : (int)row["NTREB"];
                     var date = (DateTime)row["DATESOST"];
 
-                    var rasDoc = DbSklad.GetRasDoc(dolj, podr, ntreb, date);
+                    var rasDoc = DbSklad.GetRasDoc(dolj, podr, ntreb, date, null);
                     _rasDocId.Add(id, rasDoc);
                 }
             }

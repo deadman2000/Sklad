@@ -28,7 +28,7 @@ namespace Sklad3.Objects
 
         protected void UpdateField(string field, object value)
         {
-            SQLiteCommand cmd = new SQLiteCommand("UPDATE " + Table + " SET " + field + "=@V WHERE id=@id");
+            SQLiteCommand cmd = new SQLiteCommand("UPDATE [" + Table + "] SET [" + field + "]=@V WHERE id=@id");
             cmd.Parameters.AddWithValue("@id", _id);
             cmd.Parameters.AddWithValue("@V", value);
             DbSklad.SQL.ExecuteNonQuery(cmd);
@@ -36,7 +36,7 @@ namespace Sklad3.Objects
 
         public void Delete()
         {
-            var cmd = new SQLiteCommand("DELETE FROM " + Table + " WHERE id=@id");
+            var cmd = new SQLiteCommand("DELETE FROM [" + Table + "] WHERE id=@id");
             cmd.Parameters.AddWithValue("@id", _id);
             DbSklad.SQL.ExecuteNonQuery(cmd);
             DeleteFromList();

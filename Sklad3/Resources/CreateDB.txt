@@ -64,5 +64,6 @@ CREATE TABLE [RasDoc](
 	[id_podr] integer NOT NULL,
 	[ntreb] integer,
 	[date] datetime NOT NULL,
-	[id_month] integer NOT NULL
+	[id_month] integer NOT NULL,
+	[type] integer
 );

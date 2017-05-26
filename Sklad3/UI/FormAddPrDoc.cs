@@ -70,12 +70,7 @@ namespace Sklad3.UI
             MainForm.Inst.ScrollTo(last);
             Close();
         }
-
-        private void btCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        
         private void gcTovars_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)

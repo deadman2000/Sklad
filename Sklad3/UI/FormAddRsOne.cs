@@ -37,10 +37,5 @@ namespace Sklad3.UI
                 Close();
             }
         }
-
-        private void btCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

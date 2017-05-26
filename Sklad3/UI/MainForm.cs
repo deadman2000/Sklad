@@ -233,20 +233,29 @@ namespace Sklad3.UI
 
         #endregion
 
+        #region Reports
+
+        private void bbiRepMat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new MatReport(DbSklad.Sklad.FindAll(s => String.IsNullOrEmpty(s.Tovar.Invn))).Build();
+        }
+
         private void bbiRepOther_ItemClick(object sender, ItemClickEventArgs e)
         {
-            new MatReport(DbSklad.Sklad.FindAll(s => !s.Tovar.Nsch.Equals("210104") && !s.Tovar.Nsch.Equals("210106"))).Build();
+            new MatReport(DbSklad.Sklad.FindAll(s => !String.IsNullOrEmpty(s.Tovar.Invn))).Build();
         }
 
-        private void bbiRep210104_ItemClick(object sender, ItemClickEventArgs e)
+        private void bbiRasReport_ItemClick(object sender, ItemClickEventArgs e)
         {
-            new MatReport(DbSklad.Sklad.FindAll(s => s.Tovar.Nsch.Equals("210104"))).Build();
+            var form = new FormSelectRasDoc(DbSklad.RasDocs.Where(d => d.Type != null).ToList());
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var doc = form.SelectedRasDoc;
+                new RasReport(doc).Build();
+            }
         }
 
-        private void bbiRep210106_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            new MatReport(DbSklad.Sklad.FindAll(s => s.Tovar.Nsch.Equals("210106"))).Build();
-        }
+        #endregion
 
         private void bbiImport_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -339,7 +348,7 @@ namespace Sklad3.UI
             var rs = _popupObject as SklRs;
             if (rs != null)
             {
-                var form = new FormSelectRasDoc();
+                var form = new FormSelectRasDoc(DbSklad.RasDocs);
                 if (form.ShowDialog() != DialogResult.OK) return;
 
                 rs.Doc = form.SelectedRasDoc;
@@ -348,6 +357,8 @@ namespace Sklad3.UI
         }
 
         #endregion
+
+        #region Settings
 
         private void beiPodrazdName_EditValueChanged(object sender, EventArgs e)
         {
@@ -366,5 +377,7 @@ namespace Sklad3.UI
                 Settings.Default.Save();
             }
         }
+
+        #endregion
     }
 }

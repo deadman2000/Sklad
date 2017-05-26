@@ -29,6 +29,7 @@ namespace Sklad3.UI
             gcTovars.DataSource = _positions;
             cbDolj.Properties.Items.AddRange(DbSklad.Dolj);
             cbPodr.Properties.Items.AddRange(DbSklad.Podrazd);
+            cbDocType.Properties.Items.AddRange(RasDocPattern.Patterns);
         }
 
         private void glueRsDoc_EditValueChanged(object sender, EventArgs e)
@@ -62,12 +63,7 @@ namespace Sklad3.UI
                 selExistTov.Clear();
             }
         }
-
-        private void btCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        
         private void btAdd_Click(object sender, EventArgs e)
         {
             if (_positions.Count == 0)
@@ -88,7 +84,8 @@ namespace Sklad3.UI
             {
                 var dolj = cbDolj.EditValue as People ?? DbSklad.GetDolj(cbDolj.Text);
                 var podr = cbPodr.EditValue as Podrazd ?? DbSklad.GetPodrazd(cbPodr.Text);
-                doc = DbSklad.GetRasDoc(dolj, podr, (int)seNumDoc.Value, deDateDoc.DateTime);
+                var type = cbDocType.EditValue as RasDocPattern;
+                doc = DbSklad.GetRasDoc(dolj, podr, (int)seNumDoc.Value, deDateDoc.DateTime, type);
             }
 
             var month = (Month)cbMonth.SelectedItem;

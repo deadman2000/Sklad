@@ -50,12 +50,16 @@
             this.ribeLocate = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.bbiEdIsm = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRepOther = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRep210104 = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRep210106 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRepMat = new DevExpress.XtraBars.BarButtonItem();
             this.biSkin = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.bbiChangeTovar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRemoveMove = new DevExpress.XtraBars.BarButtonItem();
             this.bbiChangePrDoc = new DevExpress.XtraBars.BarButtonItem();
+            this.beiPodrazdName = new DevExpress.XtraBars.BarEditItem();
+            this.ritePodrazdName = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.beiUserName = new DevExpress.XtraBars.BarEditItem();
+            this.riteUserName = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.bbiRasReport = new DevExpress.XtraBars.BarButtonItem();
             this.icLargeButtons = new DevExpress.Utils.ImageCollection(this.components);
             this.rpMoves = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgPrihod = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -63,8 +67,10 @@
             this.rpgDicts = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgMatReport = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgMoveReports = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpSettings = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgSkin = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgRepSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tcMain = new DevExpress.XtraTab.XtraTabControl();
             this.icFolders = new DevExpress.Utils.ImageCollection(this.components);
@@ -130,16 +136,13 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.pmSklRashod = new DevExpress.XtraBars.PopupMenu(this.components);
             this.pmSklPrihod = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.rpgRepSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.beiPodrazdName = new DevExpress.XtraBars.BarEditItem();
-            this.ritePodrazdName = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.beiUserName = new DevExpress.XtraBars.BarEditItem();
-            this.riteUserName = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icSmallButtons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricbMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribeLocate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ritePodrazdName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.riteUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icLargeButtons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcMain)).BeginInit();
             this.tcMain.SuspendLayout();
@@ -159,8 +162,6 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pmSklRashod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pmSklPrihod)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ritePodrazdName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.riteUserName)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -185,8 +186,7 @@
             this.beiLocate,
             this.bbiEdIsm,
             this.bbiRepOther,
-            this.bbiRep210104,
-            this.bbiRep210106,
+            this.bbiRepMat,
             this.bbiImport,
             this.biSkin,
             this.bbiNewMonth,
@@ -194,10 +194,11 @@
             this.bbiRemoveMove,
             this.bbiChangePrDoc,
             this.beiPodrazdName,
-            this.beiUserName});
+            this.beiUserName,
+            this.bbiRasReport});
             this.ribbon.LargeImages = this.icLargeButtons;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 6;
+            this.ribbon.MaxItemId = 7;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.bchiFilter);
             this.ribbon.PageHeaderItemLinks.Add(this.beiLocate);
@@ -253,6 +254,7 @@
             this.icSmallButtons.Images.SetKeyName(4, "add.png");
             this.icSmallButtons.Images.SetKeyName(5, "edit_remove.png");
             this.icSmallButtons.Images.SetKeyName(6, "database_go.png");
+            this.icSmallButtons.Images.SetKeyName(7, "reports");
             // 
             // beiMonth
             // 
@@ -314,7 +316,7 @@
             // 
             // bbiAddRsDoc
             // 
-            this.bbiAddRsDoc.Caption = "Требоваие накладная";
+            this.bbiAddRsDoc.Caption = "По документу";
             this.bbiAddRsDoc.Id = 9;
             this.bbiAddRsDoc.ImageIndex = 3;
             this.bbiAddRsDoc.LargeImageIndex = 3;
@@ -376,19 +378,14 @@
             this.bbiRepOther.Name = "bbiRepOther";
             this.bbiRepOther.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRepOther_ItemClick);
             // 
-            // bbiRep210104
+            // bbiRepMat
             // 
-            this.bbiRep210104.Caption = "210104";
-            this.bbiRep210104.Id = 28;
-            this.bbiRep210104.Name = "bbiRep210104";
-            this.bbiRep210104.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRep210104_ItemClick);
-            // 
-            // bbiRep210106
-            // 
-            this.bbiRep210106.Caption = "210106";
-            this.bbiRep210106.Id = 29;
-            this.bbiRep210106.Name = "bbiRep210106";
-            this.bbiRep210106.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRep210106_ItemClick);
+            this.bbiRepMat.Caption = "Основные";
+            this.bbiRepMat.Id = 28;
+            this.bbiRepMat.ImageIndex = 7;
+            this.bbiRepMat.LargeImageIndex = 7;
+            this.bbiRepMat.Name = "bbiRepMat";
+            this.bbiRepMat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRepMat_ItemClick);
             // 
             // biSkin
             // 
@@ -418,6 +415,42 @@
             this.bbiChangePrDoc.Name = "bbiChangePrDoc";
             this.bbiChangePrDoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiChangePrDoc_ItemClick);
             // 
+            // beiPodrazdName
+            // 
+            this.beiPodrazdName.Caption = "Подразделение";
+            this.beiPodrazdName.Edit = this.ritePodrazdName;
+            this.beiPodrazdName.EditWidth = 150;
+            this.beiPodrazdName.Id = 4;
+            this.beiPodrazdName.Name = "beiPodrazdName";
+            this.beiPodrazdName.EditValueChanged += new System.EventHandler(this.beiPodrazdName_EditValueChanged);
+            // 
+            // ritePodrazdName
+            // 
+            this.ritePodrazdName.AutoHeight = false;
+            this.ritePodrazdName.Name = "ritePodrazdName";
+            // 
+            // beiUserName
+            // 
+            this.beiUserName.Caption = "Пользователь";
+            this.beiUserName.Edit = this.riteUserName;
+            this.beiUserName.EditWidth = 150;
+            this.beiUserName.Id = 5;
+            this.beiUserName.Name = "beiUserName";
+            this.beiUserName.EditValueChanged += new System.EventHandler(this.beiUserName_EditValueChanged);
+            // 
+            // riteUserName
+            // 
+            this.riteUserName.AutoHeight = false;
+            this.riteUserName.Name = "riteUserName";
+            // 
+            // bbiRasReport
+            // 
+            this.bbiRasReport.Caption = "Акт";
+            this.bbiRasReport.Id = 6;
+            this.bbiRasReport.LargeImageIndex = 8;
+            this.bbiRasReport.Name = "bbiRasReport";
+            this.bbiRasReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRasReport_ItemClick);
+            // 
             // icLargeButtons
             // 
             this.icLargeButtons.ImageSize = new System.Drawing.Size(32, 32);
@@ -429,6 +462,8 @@
             this.icLargeButtons.Images.SetKeyName(4, "edit_add.png");
             this.icLargeButtons.Images.SetKeyName(5, "edit_remove.png");
             this.icLargeButtons.Images.SetKeyName(6, "database_go.png");
+            this.icLargeButtons.Images.SetKeyName(7, "reports");
+            this.icLargeButtons.Images.SetKeyName(8, "document");
             // 
             // rpMoves
             // 
@@ -468,19 +503,26 @@
             // rpReports
             // 
             this.rpReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgMatReport});
+            this.rpgMatReport,
+            this.rpgMoveReports});
             this.rpReports.Name = "rpReports";
             this.rpReports.Text = "Отчеты";
             // 
             // rpgMatReport
             // 
             this.rpgMatReport.AllowTextClipping = false;
-            this.rpgMatReport.ItemLinks.Add(this.bbiRep210104);
-            this.rpgMatReport.ItemLinks.Add(this.bbiRep210106);
+            this.rpgMatReport.ItemLinks.Add(this.bbiRepMat);
             this.rpgMatReport.ItemLinks.Add(this.bbiRepOther);
             this.rpgMatReport.Name = "rpgMatReport";
             this.rpgMatReport.ShowCaptionButton = false;
             this.rpgMatReport.Text = "Материальный отчет";
+            // 
+            // rpgMoveReports
+            // 
+            this.rpgMoveReports.ItemLinks.Add(this.bbiRasReport);
+            this.rpgMoveReports.Name = "rpgMoveReports";
+            this.rpgMoveReports.ShowCaptionButton = false;
+            this.rpgMoveReports.Text = "Движение";
             // 
             // rpSettings
             // 
@@ -496,6 +538,13 @@
             this.rpgSkin.Name = "rpgSkin";
             this.rpgSkin.ShowCaptionButton = false;
             this.rpgSkin.Text = "Обложка";
+            // 
+            // rpgRepSettings
+            // 
+            this.rpgRepSettings.ItemLinks.Add(this.beiPodrazdName);
+            this.rpgRepSettings.ItemLinks.Add(this.beiUserName);
+            this.rpgRepSettings.Name = "rpgRepSettings";
+            this.rpgRepSettings.Text = "Отчеты";
             // 
             // ribbonStatusBar
             // 
@@ -844,7 +893,7 @@
             this.tpPrihod.ImageIndex = 1;
             this.tpPrihod.Margin = new System.Windows.Forms.Padding(0);
             this.tpPrihod.Name = "tpPrihod";
-            this.tpPrihod.Size = new System.Drawing.Size(991, 551);
+            this.tpPrihod.Size = new System.Drawing.Size(991, 557);
             this.tpPrihod.Text = "Приход";
             // 
             // gcPrihod
@@ -855,7 +904,7 @@
             this.gcPrihod.Margin = new System.Windows.Forms.Padding(0);
             this.gcPrihod.MenuManager = this.ribbon;
             this.gcPrihod.Name = "gcPrihod";
-            this.gcPrihod.Size = new System.Drawing.Size(991, 551);
+            this.gcPrihod.Size = new System.Drawing.Size(991, 557);
             this.gcPrihod.TabIndex = 0;
             this.gcPrihod.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPrihod});
@@ -1059,7 +1108,7 @@
             this.tpRashod.Controls.Add(this.gcRashod);
             this.tpRashod.ImageIndex = 2;
             this.tpRashod.Name = "tpRashod";
-            this.tpRashod.Size = new System.Drawing.Size(991, 551);
+            this.tpRashod.Size = new System.Drawing.Size(991, 557);
             this.tpRashod.Text = "Расход";
             // 
             // gcRashod
@@ -1070,7 +1119,7 @@
             this.gcRashod.Margin = new System.Windows.Forms.Padding(0);
             this.gcRashod.MenuManager = this.ribbon;
             this.gcRashod.Name = "gcRashod";
-            this.gcRashod.Size = new System.Drawing.Size(991, 551);
+            this.gcRashod.Size = new System.Drawing.Size(991, 557);
             this.gcRashod.TabIndex = 1;
             this.gcRashod.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRashod});
@@ -1301,41 +1350,6 @@
             this.pmSklPrihod.Name = "pmSklPrihod";
             this.pmSklPrihod.Ribbon = this.ribbon;
             // 
-            // rpgRepSettings
-            // 
-            this.rpgRepSettings.ItemLinks.Add(this.beiPodrazdName);
-            this.rpgRepSettings.ItemLinks.Add(this.beiUserName);
-            this.rpgRepSettings.Name = "rpgRepSettings";
-            this.rpgRepSettings.Text = "Отчеты";
-            // 
-            // beiPodrazdName
-            // 
-            this.beiPodrazdName.Caption = "Подразделение";
-            this.beiPodrazdName.Edit = this.ritePodrazdName;
-            this.beiPodrazdName.EditWidth = 150;
-            this.beiPodrazdName.Id = 4;
-            this.beiPodrazdName.Name = "beiPodrazdName";
-            this.beiPodrazdName.EditValueChanged += new System.EventHandler(this.beiPodrazdName_EditValueChanged);
-            // 
-            // ritePodrazdName
-            // 
-            this.ritePodrazdName.AutoHeight = false;
-            this.ritePodrazdName.Name = "ritePodrazdName";
-            // 
-            // beiUserName
-            // 
-            this.beiUserName.Caption = "Пользователь";
-            this.beiUserName.Edit = this.riteUserName;
-            this.beiUserName.EditWidth = 150;
-            this.beiUserName.Id = 5;
-            this.beiUserName.Name = "beiUserName";
-            this.beiUserName.EditValueChanged += new System.EventHandler(this.beiUserName_EditValueChanged);
-            // 
-            // riteUserName
-            // 
-            this.riteUserName.AutoHeight = false;
-            this.riteUserName.Name = "riteUserName";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1355,6 +1369,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.icSmallButtons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricbMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribeLocate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ritePodrazdName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.riteUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.icLargeButtons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcMain)).EndInit();
             this.tcMain.ResumeLayout(false);
@@ -1374,8 +1390,6 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pmSklRashod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pmSklPrihod)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ritePodrazdName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.riteUserName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1460,8 +1474,7 @@
         private DevExpress.XtraBars.PopupMenu pmSklMoves;
         private DevExpress.XtraBars.BarButtonItem bbiRepOther;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgMatReport;
-        private DevExpress.XtraBars.BarButtonItem bbiRep210104;
-        private DevExpress.XtraBars.BarButtonItem bbiRep210106;
+        private DevExpress.XtraBars.BarButtonItem bbiRepMat;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
         private DevExpress.XtraBars.BarButtonItem bbiImport;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem biSkin;
@@ -1487,5 +1500,7 @@
         private DevExpress.XtraBars.BarEditItem beiUserName;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit riteUserName;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRepSettings;
+        private DevExpress.XtraBars.BarButtonItem bbiRasReport;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgMoveReports;
     }
 }

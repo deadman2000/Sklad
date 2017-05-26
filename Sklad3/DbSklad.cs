@@ -58,6 +58,8 @@ namespace Sklad3
         {
             if (!CoumnExists("Tovar", "note"))
                 _sqlite.ExecuteNonQuery("ALTER TABLE Tovar ADD COLUMN note TEXT NOT NULL DEFAULT('')");
+            if (!CoumnExists("RasDoc", "type"))
+                _sqlite.ExecuteNonQuery("ALTER TABLE RasDoc ADD COLUMN type integer");
         }
 
         private static bool CoumnExists(string tableName, string columnName)
@@ -471,12 +473,12 @@ namespace Sklad3
             }
         }
 
-        public static Ras GetRasDoc(People dolj, Podrazd podr, int? numDoc, DateTime dateDoc)
+        public static Ras GetRasDoc(People dolj, Podrazd podr, int? numDoc, DateTime dateDoc, RasDocPattern type)
         {
             var doc = RasDocs.Find(f => f.Dolj == dolj && f.Podr == podr && f.Date == dateDoc && f.Number == numDoc);
             if (doc != null) return doc;
 
-            var cmd = new SQLiteCommand("INSERT INTO RasDoc(id_dl, id_podr, ntreb, date, id_month) VALUES (@id_dl, @id_podr, @ntreb, @date, @m); SELECT * FROM RasDoc WHERE id=last_insert_rowid()");
+            var cmd = new SQLiteCommand("INSERT INTO RasDoc(id_dl, id_podr, ntreb, date, id_month, type) VALUES (@id_dl, @id_podr, @ntreb, @date, @m, @t); SELECT * FROM RasDoc WHERE id=last_insert_rowid()");
             cmd.Parameters.AddWithValue("@id_dl", dolj.Id);
             cmd.Parameters.AddWithValue("@id_podr", podr.Id);
             if (numDoc.HasValue)
@@ -485,6 +487,10 @@ namespace Sklad3
                 cmd.Parameters.AddWithValue("@ntreb", DBNull.Value);
             cmd.Parameters.AddWithValue("@date", dateDoc);
             cmd.Parameters.AddWithValue("@m", _month.Id);
+            if (type != null)
+                cmd.Parameters.AddWithValue("@t", type.Id);
+            else
+                cmd.Parameters.AddWithValue("@t", DBNull.Value);
 
             var tbl = _sqlite.ExecuteTable(cmd);
             doc = new Ras(tbl.Rows[0]);

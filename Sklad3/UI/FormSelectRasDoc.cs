@@ -11,13 +11,13 @@ using Sklad3.Objects;
 
 namespace Sklad3.UI
 {
-    public partial class FormSelectRasDoc : DevExpress.XtraEditors.XtraForm
+    public partial class FormSelectRasDoc : XtraForm
     {
-        public FormSelectRasDoc()
+        public FormSelectRasDoc(List<Ras> ras)
         {
             InitializeComponent();
 
-            gcRas.DataSource = DbSklad.RasDocs;
+            gcRas.DataSource = ras;
             gvRas.BestFitColumns();
         }
 
