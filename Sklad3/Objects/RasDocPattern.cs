@@ -22,18 +22,18 @@ namespace Sklad3.Objects
             return null;
         }
 
-        private RasDocPattern(int id, string name, string pattern)
+        private RasDocPattern(int id, string name, string template)
         {
             _id = id;
             _name = name;
-            _pattern = pattern;
+            _template = template;
         }
 
         private int _id;
         public int Id => _id;
 
-        private string _pattern;
-        public string Pattern => _pattern;
+        private string _template;
+        public string Template => _template;
 
         private string _name;
         public string Name => _name;

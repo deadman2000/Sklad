@@ -74,12 +74,13 @@
             this.btCancel.Size = new System.Drawing.Size(80, 24);
             this.btCancel.TabIndex = 5;
             this.btCancel.Text = "Отмена";
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // selTov
             // 
             this.selTov.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.selTov.Location = new System.Drawing.Point(8, 32);
-            this.selTov.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.selTov.Margin = new System.Windows.Forms.Padding(4);
             this.selTov.Name = "selTov";
             this.selTov.Size = new System.Drawing.Size(354, 176);
             this.selTov.TabIndex = 0;
@@ -102,7 +103,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormAddMBeg";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

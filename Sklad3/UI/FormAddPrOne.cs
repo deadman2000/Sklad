@@ -38,5 +38,10 @@ namespace Sklad3.UI
             if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)
                 luePrDoc.EditValue = null;
         }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

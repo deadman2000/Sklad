@@ -114,6 +114,7 @@
             this.btCancel.Size = new System.Drawing.Size(75, 23);
             this.btCancel.TabIndex = 21;
             this.btCancel.Text = "Отмена";
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // sbAddPrDoc
             // 

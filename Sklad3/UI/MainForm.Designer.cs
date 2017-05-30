@@ -1147,6 +1147,7 @@
             this.gvRashod.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gvRashod.OptionsCustomization.AllowQuickHideColumns = false;
             this.gvRashod.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvRashod.OptionsSelection.MultiSelect = true;
             this.gvRashod.OptionsView.ColumnAutoWidth = false;
             this.gvRashod.OptionsView.EnableAppearanceEvenRow = true;
             this.gvRashod.OptionsView.EnableAppearanceOddRow = true;

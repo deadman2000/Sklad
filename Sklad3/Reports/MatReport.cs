@@ -20,7 +20,7 @@ namespace Sklad3.Reports
 
         protected override void FillContent()
         {
-            var listsCount = (int)Math.Round(_moves.Count / ROWS_PER_LIST + 0.5);
+            var listsCount = (int)Math.Round((double)_moves.Count / ROWS_PER_LIST + 0.5);
 
             var init = sl.GetCurrentWorksheetName();
             CopyLists(init, listsCount - 1);

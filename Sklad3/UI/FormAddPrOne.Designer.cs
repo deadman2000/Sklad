@@ -84,6 +84,7 @@
             this.btCancel.Size = new System.Drawing.Size(80, 23);
             this.btCancel.TabIndex = 1;
             this.btCancel.Text = "Отмена";
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // deDate
             // 
@@ -155,7 +156,7 @@
             // selTov
             // 
             this.selTov.Location = new System.Drawing.Point(8, 48);
-            this.selTov.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.selTov.Margin = new System.Windows.Forms.Padding(4);
             this.selTov.Name = "selTov";
             this.selTov.Size = new System.Drawing.Size(339, 165);
             this.selTov.TabIndex = 0;
@@ -182,7 +183,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormAddPrOne";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

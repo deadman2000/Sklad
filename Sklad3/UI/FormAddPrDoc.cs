@@ -83,5 +83,10 @@ namespace Sklad3.UI
                 gcTovars.RefreshDataSource();
             }
         }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -87,6 +87,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RuDateAndMoneyConverter.cs" />
     <Compile Include="Objects\EdIsm.cs" />
     <Compile Include="Objects\IdObject.cs" />
     <Compile Include="Objects\Month.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Reports\MatReport.cs" />
     <Compile Include="Reports\RasReport.cs" />
     <Compile Include="Reports\Report.cs" />
+    <Compile Include="Reports\SLDocumentExt.cs" />
     <Compile Include="SQLiteSafe.cs" />
     <Compile Include="UI\FormAddMBeg.cs">
       <SubType>Form</SubType>

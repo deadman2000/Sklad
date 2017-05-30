@@ -93,6 +93,7 @@
             this.btCancel.Size = new System.Drawing.Size(80, 23);
             this.btCancel.TabIndex = 4;
             this.btCancel.Text = "Отмена";
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // btAdd
             // 
@@ -134,7 +135,7 @@
             // selExistTov
             // 
             this.selExistTov.Location = new System.Drawing.Point(8, 48);
-            this.selExistTov.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.selExistTov.Margin = new System.Windows.Forms.Padding(4);
             this.selExistTov.Name = "selExistTov";
             this.selExistTov.Size = new System.Drawing.Size(340, 158);
             this.selExistTov.TabIndex = 2;
@@ -160,7 +161,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormAddRsOne";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
