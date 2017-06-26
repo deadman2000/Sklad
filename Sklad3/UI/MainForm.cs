@@ -237,12 +237,12 @@ namespace Sklad3.UI
 
         private void bbiRepMat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            new MatReport(DbSklad.Sklad.FindAll(s => String.IsNullOrEmpty(s.Tovar.Invn))).Build();
+            new MatReport(DbSklad.Sklad.FindAll(s => !String.IsNullOrEmpty(s.Tovar.Invn))).Build();
         }
 
         private void bbiRepOther_ItemClick(object sender, ItemClickEventArgs e)
         {
-            new MatReport(DbSklad.Sklad.FindAll(s => !String.IsNullOrEmpty(s.Tovar.Invn))).Build();
+            new MatReport(DbSklad.Sklad.FindAll(s => String.IsNullOrEmpty(s.Tovar.Invn))).Build();
         }
 
         private void bbiRasReport_ItemClick(object sender, ItemClickEventArgs e)

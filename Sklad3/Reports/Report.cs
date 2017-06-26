@@ -84,35 +84,23 @@ namespace Sklad3.Reports
             }
         }
 
-        protected CellCoord FindCell(string value)
+
+        protected void CopyLists(string name, int count = 1)
         {
-            foreach (var rows in sl.GetCells())
-            {
-                int row = rows.Key;
-                foreach (var column in rows.Value)
-                {
-                    int col = column.Key;
-                    var val = sl.GetCellValueAsString(row, col);
-                    if (val == value)
-                        return new CellCoord(row, col);
-                }
-            }
-            return null;
+            var init = sl.GetCurrentWorksheetName();
+            bool useBlank = init == name;
+
+            if (useBlank) sl.AddWorksheet("blank");
+
+            for (int i = 0; i < count; i++)
+                sl.CopyWorksheet(name, name + "_" + (i + 2));
+
+            sl.SelectWorksheet(init);
+            if (useBlank) sl.DeleteWorksheet("blank");
         }
 
         protected abstract void FillContent();
 
         protected abstract string Template { get; }
-    }
-
-    class CellCoord
-    {
-        public int Row, Col;
-
-        public CellCoord(int r, int c)
-        {
-            Row = r;
-            Col = c;
-        }
     }
 }

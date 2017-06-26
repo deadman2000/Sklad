@@ -1,9 +1,11 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.DXErrorProvider;
+using Sklad3.Objects;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
-using DevExpress.XtraEditors.DXErrorProvider;
-using Sklad3.Objects;
 
 namespace Sklad3.UI
 {
@@ -22,7 +24,7 @@ namespace Sklad3.UI
 
             SetVisibleLabels(false);
 
-            cbName.Properties.Items.AddRange(DbSklad.TovNamesList());cbNsch.Properties.Items.AddRange(DbSklad.NschList());
+            cbName.Properties.Items.AddRange(DbSklad.TovNamesList()); cbNsch.Properties.Items.AddRange(DbSklad.NschList());
             cbEdism.Properties.Items.AddRange(DbSklad.EdIsm);
 
             plNewTov.Visible = false;
@@ -53,6 +55,13 @@ namespace Sklad3.UI
                 ConditionOperator = ConditionOperator.IsNotBlank,
                 ErrorText = "Введите единицу измерения"
             });
+        }
+
+        private List<SklRs> _rsPositions;
+        public List<SklRs> RsPositions
+        {
+            get { return _rsPositions; }
+            set { _rsPositions = value; }
         }
 
         private bool _useCount = true;
@@ -107,7 +116,7 @@ namespace Sklad3.UI
                 lcInvn.Text = tov.Invn;
                 lcEdism.Text = tov.EdIsm.Name;
                 lcPrice.Text = tov.Price.ToString(CultureInfo.CurrentCulture);
-                lcKmCount.Text = tov.TotalCount.ToString(CultureInfo.CurrentCulture);
+                lcKmCount.Text = GetTotalCount(tov).ToString(CultureInfo.CurrentCulture);
             }
             else
             {
@@ -117,6 +126,13 @@ namespace Sklad3.UI
                 lcPrice.Text = "";
                 lcKmCount.Text = "";
             }
+        }
+
+        public double GetTotalCount(Tovar tov)
+        {
+            if (_rsPositions != null)
+                return tov.TotalCount - _rsPositions.FindAll(p => p.Tovar == tov).Sum(p => p.Count);
+            return tov.TotalCount;
         }
 
         private void ceSum_EditValueChanged(object sender, EventArgs e)

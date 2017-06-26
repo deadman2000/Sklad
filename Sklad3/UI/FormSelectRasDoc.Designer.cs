@@ -30,13 +30,13 @@
         {
             this.gcRas = new DevExpress.XtraGrid.GridControl();
             this.gvRas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcDolj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcPodr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.sbSelect = new DevExpress.XtraEditors.SimpleButton();
-            this.gcType = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcRas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -51,7 +51,7 @@
             this.gcRas.MainView = this.gvRas;
             this.gcRas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcRas.Name = "gcRas";
-            this.gcRas.Size = new System.Drawing.Size(459, 367);
+            this.gcRas.Size = new System.Drawing.Size(535, 452);
             this.gcRas.TabIndex = 0;
             this.gcRas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRas});
@@ -74,6 +74,14 @@
             this.gvRas.OptionsView.ShowIndicator = false;
             this.gvRas.DoubleClick += new System.EventHandler(this.gvRas_DoubleClick);
             // 
+            // gcType
+            // 
+            this.gcType.Caption = "Тип";
+            this.gcType.FieldName = "Type.Name";
+            this.gcType.Name = "gcType";
+            this.gcType.Visible = true;
+            this.gcType.VisibleIndex = 0;
+            // 
             // gcDolj
             // 
             this.gcDolj.Caption = "Получатель";
@@ -95,8 +103,6 @@
             this.gcNumber.Caption = "Номер";
             this.gcNumber.FieldName = "Number";
             this.gcNumber.Name = "gcNumber";
-            this.gcNumber.Visible = true;
-            this.gcNumber.VisibleIndex = 3;
             // 
             // gcDate
             // 
@@ -104,43 +110,35 @@
             this.gcDate.FieldName = "Date";
             this.gcDate.Name = "gcDate";
             this.gcDate.Visible = true;
-            this.gcDate.VisibleIndex = 4;
+            this.gcDate.VisibleIndex = 3;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.sbSelect);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 367);
+            this.panelControl1.Location = new System.Drawing.Point(0, 452);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(459, 39);
+            this.panelControl1.Size = new System.Drawing.Size(535, 48);
             this.panelControl1.TabIndex = 1;
             // 
             // sbSelect
             // 
             this.sbSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbSelect.Location = new System.Drawing.Point(339, 6);
+            this.sbSelect.Location = new System.Drawing.Point(395, 7);
             this.sbSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sbSelect.Name = "sbSelect";
-            this.sbSelect.Size = new System.Drawing.Size(103, 26);
+            this.sbSelect.Size = new System.Drawing.Size(120, 32);
             this.sbSelect.TabIndex = 0;
             this.sbSelect.Text = "Выбрать";
             this.sbSelect.Click += new System.EventHandler(this.sbSelect_Click);
             // 
-            // gcType
-            // 
-            this.gcType.Caption = "Тип";
-            this.gcType.FieldName = "Type.Name";
-            this.gcType.Name = "gcType";
-            this.gcType.Visible = true;
-            this.gcType.VisibleIndex = 0;
-            // 
             // FormSelectRasDoc
             // 
             this.AcceptButton = this.sbSelect;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 406);
+            this.ClientSize = new System.Drawing.Size(535, 500);
             this.Controls.Add(this.gcRas);
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

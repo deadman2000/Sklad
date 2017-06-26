@@ -198,6 +198,7 @@
             this.bbiRasReport});
             this.ribbon.LargeImages = this.icLargeButtons;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbon.MaxItemId = 7;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.bchiFilter);
@@ -215,7 +216,7 @@
             this.riteUserName});
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1000, 144);
+            this.ribbon.Size = new System.Drawing.Size(1167, 183);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
@@ -544,24 +545,26 @@
             this.rpgRepSettings.ItemLinks.Add(this.beiPodrazdName);
             this.rpgRepSettings.ItemLinks.Add(this.beiUserName);
             this.rpgRepSettings.Name = "rpgRepSettings";
+            this.rpgRepSettings.ShowCaptionButton = false;
             this.rpgRepSettings.Text = "Отчеты";
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 735);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 903);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1000, 32);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1167, 41);
             // 
             // tcMain
             // 
             this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcMain.Images = this.icFolders;
-            this.tcMain.Location = new System.Drawing.Point(3, 3);
+            this.tcMain.Location = new System.Drawing.Point(3, 4);
             this.tcMain.Margin = new System.Windows.Forms.Padding(0);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedTabPage = this.tpSklad;
-            this.tcMain.Size = new System.Drawing.Size(997, 588);
+            this.tcMain.Size = new System.Drawing.Size(1164, 716);
             this.tcMain.TabIndex = 5;
             this.tcMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tpPrihod,
@@ -581,18 +584,19 @@
             this.tpSklad.ImageIndex = 0;
             this.tpSklad.Margin = new System.Windows.Forms.Padding(0);
             this.tpSklad.Name = "tpSklad";
-            this.tpSklad.Size = new System.Drawing.Size(991, 557);
+            this.tpSklad.Size = new System.Drawing.Size(1157, 682);
             this.tpSklad.Text = "Склад";
             // 
             // gcSklad
             // 
             this.gcSklad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcSklad.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcSklad.Location = new System.Drawing.Point(0, 0);
             this.gcSklad.MainView = this.gvSklad;
             this.gcSklad.Margin = new System.Windows.Forms.Padding(0);
             this.gcSklad.MenuManager = this.ribbon;
             this.gcSklad.Name = "gcSklad";
-            this.gcSklad.Size = new System.Drawing.Size(991, 557);
+            this.gcSklad.Size = new System.Drawing.Size(1157, 682);
             this.gcSklad.TabIndex = 0;
             this.gcSklad.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSklad});
@@ -893,18 +897,19 @@
             this.tpPrihod.ImageIndex = 1;
             this.tpPrihod.Margin = new System.Windows.Forms.Padding(0);
             this.tpPrihod.Name = "tpPrihod";
-            this.tpPrihod.Size = new System.Drawing.Size(991, 557);
+            this.tpPrihod.Size = new System.Drawing.Size(1156, 690);
             this.tpPrihod.Text = "Приход";
             // 
             // gcPrihod
             // 
             this.gcPrihod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcPrihod.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcPrihod.Location = new System.Drawing.Point(0, 0);
             this.gcPrihod.MainView = this.gvPrihod;
             this.gcPrihod.Margin = new System.Windows.Forms.Padding(0);
             this.gcPrihod.MenuManager = this.ribbon;
             this.gcPrihod.Name = "gcPrihod";
-            this.gcPrihod.Size = new System.Drawing.Size(991, 557);
+            this.gcPrihod.Size = new System.Drawing.Size(1156, 690);
             this.gcPrihod.TabIndex = 0;
             this.gcPrihod.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPrihod});
@@ -1107,19 +1112,21 @@
             // 
             this.tpRashod.Controls.Add(this.gcRashod);
             this.tpRashod.ImageIndex = 2;
+            this.tpRashod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpRashod.Name = "tpRashod";
-            this.tpRashod.Size = new System.Drawing.Size(991, 557);
+            this.tpRashod.Size = new System.Drawing.Size(1156, 690);
             this.tpRashod.Text = "Расход";
             // 
             // gcRashod
             // 
             this.gcRashod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcRashod.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcRashod.Location = new System.Drawing.Point(0, 0);
             this.gcRashod.MainView = this.gvRashod;
             this.gcRashod.Margin = new System.Windows.Forms.Padding(0);
             this.gcRashod.MenuManager = this.ribbon;
             this.gcRashod.Name = "gcRashod";
-            this.gcRashod.Size = new System.Drawing.Size(991, 557);
+            this.gcRashod.Size = new System.Drawing.Size(1156, 690);
             this.gcRashod.TabIndex = 1;
             this.gcRashod.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRashod});
@@ -1328,11 +1335,11 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.tcMain);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 144);
+            this.panelControl1.Location = new System.Drawing.Point(0, 183);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
-            this.panelControl1.Size = new System.Drawing.Size(1000, 591);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(3, 4, 0, 0);
+            this.panelControl1.Size = new System.Drawing.Size(1167, 720);
             this.panelControl1.TabIndex = 4;
             // 
             // pmSklRashod
@@ -1353,13 +1360,14 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 767);
+            this.ClientSize = new System.Drawing.Size(1167, 944);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

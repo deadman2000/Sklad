@@ -31,6 +31,8 @@ namespace Sklad3.UI
             cbPodr.Properties.Items.AddRange(DbSklad.Podrazd);
             cbDocType.Properties.Items.Add("Не задан");
             cbDocType.Properties.Items.AddRange(RasDocPattern.Patterns);
+
+            selExistTov.RsPositions = _positions;
         }
 
         private void glueRsDoc_EditValueChanged(object sender, EventArgs e)
@@ -51,20 +53,20 @@ namespace Sklad3.UI
         private void cbAddTov_Click(object sender, EventArgs e)
         {
             Tovar tov = selExistTov.SelectedTovar;
-            if (tov != null)
+            if (tov == null) return;
+
+            if (selExistTov.Count > selExistTov.GetTotalCount(tov))
             {
-                if (selExistTov.Count > tov.TotalCount)
-                {
-                    XtraMessageBox.Show("Количество больше чем в остатке!");
-                    return;
-                }
-                _positions.Add(new SklRs(tov, selExistTov.Count));
-                gcTovars.RefreshDataSource();
-                gvTovars.BestFitColumns();
-                selExistTov.Clear();
+                XtraMessageBox.Show("Количество больше чем в остатке!");
+                return;
             }
+
+            _positions.Add(new SklRs(tov, selExistTov.Count));
+            gcTovars.RefreshDataSource();
+            gvTovars.BestFitColumns();
+            selExistTov.Clear();
         }
-        
+
         private void btAdd_Click(object sender, EventArgs e)
         {
             if (_positions.Count == 0)

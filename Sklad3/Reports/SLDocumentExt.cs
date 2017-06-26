@@ -28,5 +28,32 @@ namespace Sklad3.Reports
                     return doc.SetCellValue(RowIndex, ColumnIndex, val.ToString());
             }
         }
+
+        public static CellCoord FindCell(this SLDocument doc, string value)
+        {
+            foreach (var rows in doc.GetCells())
+            {
+                int row = rows.Key;
+                foreach (var column in rows.Value)
+                {
+                    int col = column.Key;
+                    var val = doc.GetCellValueAsString(row, col);
+                    if (val == value)
+                        return new CellCoord(row, col);
+                }
+            }
+            return null;
+        }
+    }
+
+    public class CellCoord
+    {
+        public int Row, Col;
+
+        public CellCoord(int r, int c)
+        {
+            Row = r;
+            Col = c;
+        }
     }
 }

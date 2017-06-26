@@ -49,15 +49,15 @@ namespace Sklad3.Reports
                         sl.SetCellValue(row, 6, m.Nm.Count);
                         sl.SetCellValue(row, 7, m.NmSum.Value.ToString("N", nfi_money));
                     }
-                    if (m.RsCount > 0)
-                    {
-                        sl.SetCellValue(row, 8, m.RsCount);
-                        sl.SetCellValue(row, 9, m.RsSum.ToString("N", nfi_money));
-                    }
                     if (m.PrCount > 0)
                     {
-                        sl.SetCellValue(row, 10, m.PrCount);
-                        sl.SetCellValue(row, 11, m.PrSum.ToString("N", nfi_money));
+                        sl.SetCellValue(row, 8, m.PrCount);
+                        sl.SetCellValue(row, 9, m.PrSum.ToString("N", nfi_money));
+                    }
+                    if (m.RsCount > 0)
+                    {
+                        sl.SetCellValue(row, 10, m.RsCount);
+                        sl.SetCellValue(row, 11, m.RsSum.ToString("N", nfi_money));
                     }
                     if (m.KmCount > 0)
                     {
@@ -79,30 +79,16 @@ namespace Sklad3.Reports
                 int totalRow = START_ROW + ROWS_PER_LIST;
 
                 if (totalNm > 0) sl.SetCellValue(totalRow, 7, totalNm.ToString("N", nfi_money));
-                if (totalRs > 0) sl.SetCellValue(totalRow, 9, totalRs.ToString("N", nfi_money));
-                if (totalPr > 0) sl.SetCellValue(totalRow, 11, totalPr.ToString("N", nfi_money));
+                if (totalPr > 0) sl.SetCellValue(totalRow, 9, totalPr.ToString("N", nfi_money));
+                if (totalRs > 0) sl.SetCellValue(totalRow, 11, totalRs.ToString("N", nfi_money));
                 if (totalKm > 0) sl.SetCellValue(totalRow, 13, totalKm.ToString("N", nfi_money));
 
                 //sl.AutoFitRow(START_ROW, START_ROW + ROWS_PER_LIST);
 
-                sl.AutoFitColumn(5, 13);
+                //sl.AutoFitColumn(5, 13);
             }
 
             sl.SelectWorksheet(init);
-        }
-
-        private void CopyLists(string name, int count)
-        {
-            var init = sl.GetCurrentWorksheetName();
-            bool useBlank = init == name;
-
-            if (useBlank) sl.AddWorksheet("blank");
-
-            for (int i = 0; i < count; i++)
-                sl.CopyWorksheet(name, name + "_" + (i + 2));
-
-            sl.SelectWorksheet(init);
-            if (useBlank) sl.DeleteWorksheet("blank");
         }
     }
 }
