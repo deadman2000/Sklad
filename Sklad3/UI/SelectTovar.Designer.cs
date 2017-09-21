@@ -46,6 +46,7 @@
             this.cbEdism = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cePrice = new DevExpress.XtraEditors.CalcEdit();
             this.plExistTov = new DevExpress.XtraEditors.PanelControl();
+            this.btRepeat = new DevExpress.XtraEditors.SimpleButton();
             this.lcKmCount = new DevExpress.XtraEditors.LabelControl();
             this.lcKmCountTitle = new DevExpress.XtraEditors.LabelControl();
             this.lcPrice = new DevExpress.XtraEditors.LabelControl();
@@ -54,12 +55,12 @@
             this.lcNsch = new DevExpress.XtraEditors.LabelControl();
             this.glueTovar = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gluevTovar = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.validProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.gcName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcEdism = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcInvn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcNsch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.validProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ceSum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plNewTov)).BeginInit();
@@ -269,6 +270,15 @@
             this.plExistTov.Size = new System.Drawing.Size(445, 209);
             this.plExistTov.TabIndex = 20;
             // 
+            // btRepeat
+            // 
+            this.btRepeat.Location = new System.Drawing.Point(131, 0);
+            this.btRepeat.Name = "btRepeat";
+            this.btRepeat.Size = new System.Drawing.Size(124, 31);
+            this.btRepeat.TabIndex = 41;
+            this.btRepeat.Text = "Повторить";
+            this.btRepeat.Click += new System.EventHandler(this.btRepeat_Click);
+            // 
             // lcKmCount
             // 
             this.lcKmCount.Location = new System.Drawing.Point(21, 183);
@@ -365,11 +375,6 @@
             this.gluevTovar.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gcName, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
-            // validProvider
-            // 
-            this.validProvider.ValidateHiddenControls = false;
-            this.validProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
-            // 
             // gcName
             // 
             this.gcName.Caption = "Наименование";
@@ -414,6 +419,11 @@
             this.gcNsch.Visible = true;
             this.gcNsch.VisibleIndex = 4;
             // 
+            // validProvider
+            // 
+            this.validProvider.ValidateHiddenControls = false;
+            this.validProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
+            // 
             // SelectTovar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -428,6 +438,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.ceCount);
             this.Controls.Add(this.lcCount);
+            this.Controls.Add(this.btRepeat);
             this.Controls.Add(this.plExistTov);
             this.Controls.Add(this.plNewTov);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -486,5 +497,6 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider validProvider;
         private DevExpress.XtraEditors.LabelControl lcKmCount;
         private DevExpress.XtraEditors.LabelControl lcKmCountTitle;
+        private DevExpress.XtraEditors.SimpleButton btRepeat;
     }
 }

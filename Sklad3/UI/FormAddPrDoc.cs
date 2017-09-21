@@ -36,9 +36,10 @@ namespace Sklad3.UI
 
         private void cbAddTov_Click(object sender, EventArgs e)
         {
-            if (selTov.SelectedTovar != null)
+            var tovar = selTov.GetSelectedTovar();
+            if (tovar != null)
             {
-                var pr = new SklPr(selTov.SelectedTovar, selTov.Count);
+                var pr = new SklPr(tovar, selTov.Count);
                 _positions.Add(pr);
                 gcTovars.RefreshDataSource();
                 gvTovars.BestFitColumns();

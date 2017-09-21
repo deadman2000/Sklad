@@ -169,29 +169,45 @@ namespace Sklad3.UI
 
         private Tovar _created;
 
-        public Tovar SelectedTovar
+        public Tovar GetSelectedTovar()
         {
-            get
+            if (!validProvider.Validate())
+                return null;
+
+            if (chbNewTovar.Checked)
             {
-                if (!validProvider.Validate())
-                    return null;
+                if (_created != null) return _created;
 
-                if (chbNewTovar.Checked)
                 {
-                    if (_created != null) return _created;
-
-                    EdIsm edIsm = (cbEdism.SelectedItem as EdIsm) ?? DbSklad.AddEdIsm(cbEdism.Text);
-                    return _created = DbSklad.AddTovar(cbName.Text, edIsm, (double)cePrice.Value, teInvn.Text, cbNsch.Text);
+                    var settings = Properties.Settings.Default;
+                    settings.LastTovarInvn = teInvn.Text;
+                    settings.LastTovarName = cbName.Text;
+                    settings.LastTovarNsch = cbNsch.Text;
+                    settings.LastTovarEdIsm = cbEdism.Text;
+                    settings.LastTovarPrice = (double)cePrice.Value;
+                    settings.LastTovarCount = Count;
+                    settings.Save();
                 }
 
-                return (Tovar)glueTovar.EditValue;
+                EdIsm edIsm = (cbEdism.SelectedItem as EdIsm) ?? DbSklad.AddEdIsm(cbEdism.Text);
+                return _created = DbSklad.AddTovar(cbName.Text, edIsm, (double)cePrice.Value, teInvn.Text, cbNsch.Text);
             }
+
+            {
+                var settings = Properties.Settings.Default;
+                settings.LastTovarId = ((Tovar)glueTovar.EditValue).Id;
+                settings.LastTovarCount = Count;
+                settings.Save();
+            }
+
+            return (Tovar)glueTovar.EditValue;
         }
 
         public double Count => (double)Math.Round(ceCount.Value, 4);
 
         public void Clear()
         {
+            _created = null;
             glueTovar.EditValue = null;
             cbName.ResetText();
             cbNsch.ResetText();
@@ -199,6 +215,28 @@ namespace Sklad3.UI
             cbEdism.ResetText();
             cePrice.ResetText();
             ceCount.ResetText();
+        }
+
+        private void btRepeat_Click(object sender, EventArgs e)
+        {
+            var settings = Properties.Settings.Default;
+
+            if (String.IsNullOrEmpty(settings.LastTovarName)) return;
+
+            if (chbNewTovar.Checked)
+            {
+                teInvn.Text = settings.LastTovarInvn;
+                cbName.Text = settings.LastTovarName;
+                cbNsch.Text = settings.LastTovarNsch;
+                cbEdism.Text = settings.LastTovarEdIsm;
+                cePrice.Value = (decimal)settings.LastTovarPrice;
+            }
+            else
+            {
+                glueTovar.EditValue = DbSklad.GetTovar(settings.LastTovarId);
+            }
+
+            ceCount.Value = (decimal)settings.LastTovarCount;
         }
     }
 }

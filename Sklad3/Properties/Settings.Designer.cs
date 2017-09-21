@@ -46,5 +46,89 @@ namespace Sklad3.Properties {
                 this["UserName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int LastTovarId {
+            get {
+                return ((int)(this["LastTovarId"]));
+            }
+            set {
+                this["LastTovarId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastTovarName {
+            get {
+                return ((string)(this["LastTovarName"]));
+            }
+            set {
+                this["LastTovarName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastTovarNsch {
+            get {
+                return ((string)(this["LastTovarNsch"]));
+            }
+            set {
+                this["LastTovarNsch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastTovarEdIsm {
+            get {
+                return ((string)(this["LastTovarEdIsm"]));
+            }
+            set {
+                this["LastTovarEdIsm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double LastTovarPrice {
+            get {
+                return ((double)(this["LastTovarPrice"]));
+            }
+            set {
+                this["LastTovarPrice"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double LastTovarCount {
+            get {
+                return ((double)(this["LastTovarCount"]));
+            }
+            set {
+                this["LastTovarCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastTovarInvn {
+            get {
+                return ((string)(this["LastTovarInvn"]));
+            }
+            set {
+                this["LastTovarInvn"] = value;
+            }
+        }
     }
 }

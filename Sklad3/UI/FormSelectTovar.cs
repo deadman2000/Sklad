@@ -18,15 +18,17 @@ namespace Sklad3.UI
             InitializeComponent();
         }
 
+        private Tovar _tovar;
+        public Tovar Tovar => _tovar;
+
         private void sbSelect_Click(object sender, EventArgs e)
         {
-            if (selectTovar.SelectedTovar != null)
+            _tovar = selectTovar.GetSelectedTovar();
+            if (_tovar != null)
             {
                 DialogResult = DialogResult.OK;
                 Close();
             }
         }
-
-        public Tovar Tovar => selectTovar.SelectedTovar;
     }
 }

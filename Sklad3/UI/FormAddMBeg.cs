@@ -16,9 +16,10 @@ namespace Sklad3.UI
         
         private void btAdd_Click(object sender, EventArgs e)
         {
-            if (selTov.SelectedTovar != null)
+            var tovar = selTov.GetSelectedTovar();
+            if (tovar != null)
             {
-                var b = DbSklad.AddMonthBeg((Month)cbMonth.SelectedItem, selTov.SelectedTovar, selTov.Count);
+                var b = DbSklad.AddMonthBeg((Month)cbMonth.SelectedItem, tovar, selTov.Count);
                 MainForm.Inst.UpdateTables();
                 MainForm.Inst.ScrollTo(b);
                 Close();

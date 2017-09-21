@@ -20,7 +20,7 @@ namespace Sklad3.UI
 
         private void btAddPr_Click(object sender, EventArgs e)
         {
-            var tovar = selTov.SelectedTovar;
+            var tovar = selTov.GetSelectedTovar();
             if (tovar != null)
             {
                 var month = (Month)cbMonth.SelectedItem;
